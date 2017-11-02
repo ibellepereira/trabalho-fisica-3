@@ -37,8 +37,10 @@ class Objeto{
     if(edit){
       if(mouseY < height/2){
        posY = mouseY;
+       if(posY < 100) posY = 100;
        tamY = height/2 - posY;
       }
+
     }
   }
   
