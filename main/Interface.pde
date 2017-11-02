@@ -74,7 +74,8 @@ class Interface{
        rect(600,10,190,95);
        
        //lente 
-       fill(255,69,0);
+       //fill(255,69,0);
+       fill(255);
        rect(600+5, 10+5, 90, 25);
        fill(0);
        text("LENTE", (600+5+90/2), (10+5+25/2+10));
@@ -85,6 +86,7 @@ class Interface{
        fill(255);
        text("ESPELHO", 1+600+5+90+90/2, 10+5+25/2+10);
        noFill(); 
+       
      }else{
        rect(600,10,190,60);
        //lente 
@@ -94,14 +96,16 @@ class Interface{
        noFill();
        
        //espelho
-       fill(255,69,0);
+       //fill(255,69,0);
+       fill(255);
        rect(600+5+90, 10+5, 90, 25);
        fill(0);
        text("ESPELHO", 1+600+5+90+90/2, 10+5+25/2+10);
        noFill();
      }
      if(convergente){
-       fill(255,69,0);
+       //fill(255,69,0);
+       fill(255);
        rect(600+5, 10+5+25, 90, 25);
        textSize(16);
        fill(0);
@@ -121,7 +125,8 @@ class Interface{
        noFill();
        
        //lente divergente
-       fill(255,69,0);
+       //fill(255,69,0);
+       fill(255);
        rect(600+5+90, 10+5+25, 90, 25);
        fill(0);
        text("DIVERGENTE", 600+5+90/2+90, 10+5+25/2+25+8);
@@ -130,7 +135,7 @@ class Interface{
      
      if(lente && convergente){
        if(opcao == 1){
-         fill(255,69,0);
+         fill(255);
          rect(600+5+15, 10+5+25+25+5, 30, 30);
          noFill();
          
@@ -142,7 +147,7 @@ class Interface{
        if(opcao == 2){
          rect(600+5+15, 10+5+25+25+5, 30, 30);
          
-         fill(255,69,0);
+         fill(255);
          rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
          noFill();
          
@@ -154,7 +159,7 @@ class Interface{
          rect(600+5+15, 10+5+25+25+5, 30, 30);
          rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
          
-         fill(255,69,0);
+         fill(255);
          rect(600+5+15+30+30+30+30, 10+5+25+25+5, 30, 30); 
          noFill();
          
@@ -162,7 +167,7 @@ class Interface{
       
      }else if(lente && !convergente){
        if(opcao == 1){
-         fill(255,69,0);
+         fill(255);
          rect(600+5+15, 10+5+25+25+5, 30, 30);
          noFill();
          
@@ -174,7 +179,7 @@ class Interface{
        if(opcao == 2){
          rect(600+5+15, 10+5+25+25+5, 30, 30);
          
-         fill(255,69,0);
+         fill(255);
          rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
          noFill();
          
@@ -186,7 +191,7 @@ class Interface{
          rect(600+5+15, 10+5+25+25+5, 30, 30);
          rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
          
-         fill(255,69,0);
+         fill(255);
          rect(600+5+15+30+30+30+30, 10+5+25+25+5, 30, 30); 
          noFill();
          
