@@ -1,5 +1,5 @@
 class Convergente extends Lente{
-  int tipo; //1-biconvexo 2-planoconvexo  3-convexoconvaco 4-calota
+  int tipo; 
   
   Convergente(){
     super();
@@ -9,7 +9,8 @@ class Convergente extends Lente{
     switch(tipo){
      case 0: //espelho
      
-     
+       noFill();
+       arc(posX, posY, raio*2, raio*2,-PI/2, PI/2);
      
      
        break;

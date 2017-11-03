@@ -37,15 +37,13 @@ class Objeto{
     if(edit){
       if(mouseY < height/2){
        posY = mouseY;
-       if(posY < 100) posY = 100;
+       if(posY < 150) posY = 150;
        tamY = height/2 - posY;
       }
-
     }
   }
   
   void move(){
-    //if((mouseX > posX && mouseX < posX+tamX) && (mouseY > posY+5 && mouseY < posY+tamY)){
     if(mov){
       posX = mouseX-tamX/2;
       if(posX < 0) 

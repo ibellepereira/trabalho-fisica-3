@@ -7,10 +7,10 @@ class Lente{
  boolean espelhado;
  
  Lente(){
-  posX = width/2;
-  posY = height/2;
-  raio = 30;
-  tam = 50;
+  posX = 400;
+  posY = 300;
+  raio = 50;
+  tam = 300;
  }
  
  void move(){
