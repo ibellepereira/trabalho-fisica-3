@@ -5,11 +5,12 @@ class Lente{
  int tam;
  
  boolean espelhado;
+ int retw;
  
  Lente(){
   posX = 400;
   posY = 300;
-  raio = 50;
+  raio = 300;
   tam = 300;
  }
  

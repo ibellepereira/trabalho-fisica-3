@@ -5,7 +5,7 @@ class UI{
   
   UI(){
     opcao = 1;
-    lente = false;
+    lente = true;
     convergente = true;
   }
   
@@ -62,7 +62,6 @@ class UI{
          opcao = 3;
        }
      } 
-   
    }
    
    void mostra(){
@@ -317,4 +316,71 @@ class UI{
                     
       }         
     }
+    
+    void infoLente(Objeto obj, Objeto img){
+        String info = "Imagem ";
+        
+        if (img.tamY == 0){
+          text("Sem formação de imagem", width/2, height-10);
+          return;
+        }
+        
+        if(obj.tamY < img.tamY){
+          info = info + "maior, ";
+          
+        }else if(obj.tamY > img.tamY){
+          info = info + "menor, ";
+        }else{
+          info = info + "igual, ";
+        }
+        
+        if(img.posX < width/2){
+          info = info + "virtual, ";
+        }else{
+          info = info + "real, ";
+        }
+        
+        if(img.posY < height/2){
+          info = info + "direita.";
+        }else{
+          info = info + "invertida.";
+        }
+        System.out.println(info);
+        
+        text(info, width/2, height-10);
+    }
+    
+    void infoEspelho(Objeto obj, Objeto img){
+        String info = "Imagem ";
+        
+       /* if (img.tamY == 0){
+          text("Sem formação de imagem", width/2, height-10);
+          return;
+        }*/
+        
+        if(obj.tamY < img.tamY){
+          info = info + "maior, ";
+          
+        }else if(obj.tamY > img.tamY){
+          info = info + "menor, ";
+        }else{
+          info = info + "igual, ";
+        }
+        
+        if(img.posX < width/2){
+          info = info + "real, ";
+        }else{
+          info = info + "virtual, ";
+        }
+        
+        if(img.posY < height/2){
+          info = info + "direita.";
+        }else{
+          info = info + "invertida.";
+        }
+        System.out.println(info);
+        
+        text(info, width/2, height-10);
+    }    
+    
 }

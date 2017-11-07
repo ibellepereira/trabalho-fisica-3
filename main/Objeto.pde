@@ -8,18 +8,19 @@ class Objeto{
   boolean mov;
   
   public Objeto(){
-    tamX = 10;
-    tamY = tamX * 5;
+    tamX = 5;
+    tamY = 100;
     posX = 30;
     posY = 300-tamY;
   }
   
   void mostra(){
-    fill(255);
-    stroke(255);
+    fill(255,20,147);
+    stroke(255,20,147);
     rect(posX, posY, tamX, tamY);
+    stroke(255);
+    fill(255);
   }
-  
   
   void editando(){
     if((mouseX > posX && mouseX < posX+tamX) && (mouseY >= posY && mouseY <= posY+5)){

@@ -12,50 +12,51 @@ void setup(){
   textAlign(CENTER);
 }
 
-
-
 void draw(){
   background(0);
   textFont(f,21);
 
-  
-
-  
-  
   //linha horizontal
   line(0, height/2, width, height/2);
   //linha vertical
-  line(width/2, 0, width/2, height);
+  //line(width/2, 0, width/2, height);
   
   ui.mostra();
   obj.mostra();
   if(ui.lente){
     if(ui.convergente){
+      luz.configura(c, ui.convergente);
       c.espelhado = false;
       c.tipo = ui.opcao;
+      
     }else{
+      luz.configura(d, ui.convergente);
       d.espelhado = false;
       d.tipo = ui.opcao;
+      
     }
+    ui.infoLente(obj,luz.img);
   }else{
      if(ui.convergente){
-       luz.configura(c);
+       luz.configura(c, ui.convergente);
        c.espelhado = true;
        c.tipo = 0;
-       luz.retaParalela();
+       
      }else{
-       luz.configura(d);
+       luz.configura(d, ui.convergente);
        d.espelhado = true;
        d.tipo = 0;
-       luz.retaParalela();
+       
      }
+     ui.infoEspelho(obj, luz.img);
   }
   
   if(ui.convergente) c.mostra();
   else d.mostra();
   
+  luz.mostra();
+ 
 }
-
 
 void mouseDragged(){
   obj.move();
