@@ -5,18 +5,18 @@ class Objeto{
   int altura;
   
   boolean redimen;
-  boolean mov;
+  boolean move;
   
   PImage img;
   
   Objeto(PImage img){
     posX = 100;
-    posY = 300;
+    posY = height/2;
     
     largura = 5;
-    altura = 200;
+    altura = 100;
     
-    redimen = mov = false;
+    redimen = move = false;
     this.img = img;
     
     if(img != null) largura = img.width;
@@ -37,6 +37,7 @@ class Objeto{
     }else{ //se tiver imagem
       img = loadImage("darwin3.png");
       img.resize(0, altura);
+      img.filter(THRESHOLD, 0.65);
       image(img, posX, centroY() - marcador);
     }
   }
@@ -58,11 +59,25 @@ class Objeto{
   }
   
   void movendo(){
-    
+     if((mouseX > centroX()-largura/2 && mouseX < centroX()+largura/2) && (mouseY >= centroY() - altura/2+10 && mouseY <= posY)){
+      move = true;
+    }else{ 
+      move = false;
+    }    
   }
   
   void move(){
-    
+    if(move){
+      int desloca;
+  
+      desloca = mouseX;   
+      
+      if(img != null) 
+        largura = img.width;
+      
+      if(desloca > largura/2) 
+        posX = desloca;
+    }    
   }
   
   int centroX(){
@@ -74,7 +89,6 @@ class Objeto{
   
   int centroY(){
     return posY - altura/2;
-    
   }
   
   void style(){
