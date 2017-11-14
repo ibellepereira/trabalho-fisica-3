@@ -93,27 +93,13 @@ class Lente{
  void mostraFoco(){
    styleFoco();
    
-   if(espelhado){
-    // if(convergente){
-      // line(centroX()+raio+foco(), posY-5, centroX()+raio+foco(), posY+5);
-      // line(centroX()+raio-foco(), posY-5, centroX()+raio-foco(), posY+5);   
+   if(espelhado){ 
        line(width/2+foco(), posY-5, width/2+foco(), posY+5);
        line(width/2-foco(), posY-5, width/2-foco(), posY+5);
 
-    /*   
-       line(centroX()+raio+antiPrincipal(), posY-5, centroX()+raio+antiPrincipal(), posY+5);
-       line(centroX()+raio-antiPrincipal(), posY-5, centroX()+raio-antiPrincipal(), posY+5);       
-    */
        line(width/2+antiPrincipal(), posY-5, width/2+antiPrincipal(), posY+5);
        line(width/2-antiPrincipal(), posY-5, width/2-antiPrincipal(), posY+5);       
-    /*
-     }else{
-       line(centroX()-raio+foco(), posY-5, centroX()-raio+foco(), posY+5);
-       line(centroX()-raio-foco(), posY-5, centroX()-raio-foco(), posY+5);   
-       
-       line(centroX()-raio+antiPrincipal(), posY-5, centroX()-raio+antiPrincipal(), posY+5);
-       line(centroX()-raio-antiPrincipal(), posY-5, centroX()-raio-antiPrincipal(), posY+5);     
-     }*/
+
    }else{
      
        line(posX-focoRelativo(), posY-5, posX-focoRelativo(), posY+5);

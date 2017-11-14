@@ -5,8 +5,8 @@ Luz luz;
 
 void setup(){
   background(0);
-   size(800, 600);
-  //size(1280, 720);
+  // size(800, 600);
+  size(1280, 720);
   
   //obj = new Objeto(loadImage("darwin3.png"));
   obj = new Objeto(null);
@@ -19,10 +19,7 @@ void setup(){
   textAlign(CENTER);
 }
 
-void draw(){
-//  translate(width/2*2,height/2*2);
-//  rotate(PI); 
-  
+void draw(){  
   update();
   background(0);
   stroke(255);
@@ -38,7 +35,6 @@ void draw(){
   luz.mostra();
   ui.info(lente, obj, luz.i);
 
-  
 }
 
 void mouseDragged(){

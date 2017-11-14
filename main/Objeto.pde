@@ -36,7 +36,7 @@ class Objeto{
       
     }else{ //se tiver imagem
       img = loadImage("darwin3.png");
-      if(altura == 0) altura = 1;
+      if(altura == 0) altura = 3;
       img.resize(0, abs(altura));
       img.filter(THRESHOLD, 0.65);
       
@@ -67,7 +67,7 @@ class Objeto{
      // if(tam == 0) altura = tam;
       altura = tam;
       if(altura > 150) altura = 150;
-      if(altura <= 0) altura = 1;
+      if(altura <= 0) altura = 3;
     }    
   }
   

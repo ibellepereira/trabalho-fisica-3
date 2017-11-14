@@ -16,6 +16,8 @@ class UI{
         larguraOpcao = 30;  
   UI(PFont fonte){
     f = fonte;
+    textFont(f);
+    
     opcao = 1;
     lente = true;
     convergente = true;
@@ -114,14 +116,14 @@ class UI{
       rect(posX+margin, posY+margin+alturaBotao, larguraBotao, alturaBotao);
       
       styleFonteOn();
-      textSize(12);
+      textSize(16);
       text("CONVERGENTE", posX+margin+larguraBotao/2, posY+margin*3+alturaBotao/2+alturaBotao-3);      
       
       styleCaixaOff();
       rect(posX+margin+larguraBotao, posY+margin+alturaBotao, larguraBotao, alturaBotao);
       
       styleFonteOff();
-      textSize(12);
+      textSize(16);
       text("DIVERGENTE", posX+margin+larguraBotao/2+larguraBotao, posY+margin*3+alturaBotao/2+alturaBotao-3); 
       
     }else{
@@ -129,14 +131,14 @@ class UI{
       rect(posX+margin, posY+margin+alturaBotao, larguraBotao, alturaBotao);
 
       styleFonteOff();
-      textSize(12);
+      textSize(16);
       text("CONVERGENTE", posX+margin+larguraBotao/2, posY+margin*3+alturaBotao/2+alturaBotao-3);        
       
       styleCaixaOn();
       rect(posX+margin+larguraBotao, posY+margin+alturaBotao, larguraBotao, alturaBotao);  
       
       styleFonteOn();
-      textSize(12);
+      textSize(16);
       text("DIVERGENTE", posX+margin+larguraBotao/2+larguraBotao, posY+margin*3+alturaBotao/2+alturaBotao-3);       
     }
     
@@ -186,7 +188,7 @@ class UI{
         }else{
           info = info + "virtual, ";
         }
-        System.out.println("espelho!!");
+
       }else{
       
         if(i.centroX() < width/2){
@@ -194,7 +196,7 @@ class UI{
         }else{
           info = info + "real, ";
         }
-        //System.out.println("lente!!");
+
       }
         
       if(i.altura > 0){
@@ -238,19 +240,13 @@ class UI{
     stroke(255);
     noFill();
   }
-  
-  /*inicio métodos complementares*/
-  
+
     void biconcava(boolean select){
       if(select){
-        //fill(255);
         styleCaixaOn();
-        //rect(600+5+15, 10+5+25+25+5, 30, 30);
         rect(posX+margin+larguraOpcao/2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
         
         styleDesenhoOn();
-        //noFill();
-        //stroke(0); 
        
         line(posX+5+15+5, 10+5+25+25+5+5, posX+5+15+30-5, 10+5+25+25+5+5);
         arc(posX+5+15+5, 10+5+25+25+5+5+10, 15, 20, -PI/2, PI/2);
@@ -260,16 +256,10 @@ class UI{
         stroke(255);  
         
       }else{
-        //noFill();
-        //stroke(255);
         styleCaixaOff();
         rect(posX+margin+larguraOpcao/2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
 
-       // rect(600+5+15, 10+5+25+25+5, 30, 30);
-         
-        //stroke(255); 
-        styleDesenhoOff();
-        
+        styleDesenhoOff();   
         line(posX+5+15+5, 10+5+25+25+5+5, posX+5+15+30-5, 10+5+25+25+5+5);
         arc(posX+5+15+5, 10+5+25+25+5+5+10, 15, 20, -PI/2, PI/2);
         arc(posX+5+15+5+20, 10+5+25+25+5+5+10, 15, 20, PI/2, 3*PI/2);
@@ -279,26 +269,18 @@ class UI{
        
     void biconvexa(boolean select){
       if(select){
-        //fill(255);
-        styleCaixaOn();
-        //rect(600+5+15, 10+5+25+25+5, 30, 30);  
+        styleCaixaOn();  
         rect(posX+margin+larguraOpcao/2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
 
-        //noFill(); 
-        //stroke(0); 
-        styleDesenhoOn();
-        
+        styleDesenhoOn();    
         arc(posX+5+15+5+10, 10+5+25+25+5+5+10, 5, 20, -PI/2, PI/2);
         arc(posX+5+15+5+10, 10+5+25+25+5+5+10, 5, 20, PI/2, 3*PI/2);
          
         stroke(255);          
         
       }else{
-        //noFill();
-        //stroke(255); 
         styleCaixaOff();
         rect(posX+margin+larguraOpcao/2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
-        //rect(600+5+15, 10+5+25+25+5, 30, 30);
         
         styleDesenhoOff();
         arc(posX+5+15+5+10, 10+5+25+25+5+5+10, 5, 20, -PI/2, PI/2);
@@ -309,30 +291,19 @@ class UI{
        
     void planoConcava(boolean select){
       if(select){
-         //fill(255);
          styleCaixaOn(); 
-        // rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
         rect(posX+margin+larguraOpcao/2+larguraOpcao*2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
-         
-        // noFill();
-        // stroke(0);
+        
          styleDesenhoOn();
          
          line(posX+5+15+30+30+5+5, 10+5+25+25+5+5, posX+5+15+30+30+30-5-5, 10+5+25+25+5+5);
          arc(posX+5+15+30+30+5+5, 10+5+25+25+5+5+10, 0, 20, -PI/2, PI/2);
          arc(posX+5+15+30+30+5+20-5, 10+5+25+25+5+5+10, 10, 20, PI/2, 3*PI/2);
          line(posX+5+15+30+30+5+5, 10+5+25+25+5+5+20, posX+5+15+30+30+30-5-5, 10+5+25+25+5+5+20);
-         
-         //stroke(255);
         
       }else{
          styleCaixaOff(); 
-        // stroke(255);
-        // noFill();
          rect(posX+margin+larguraOpcao/2+larguraOpcao*2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
-        
-         
-       //  rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
          
          styleDesenhoOff();
          line(posX+5+15+30+30+5+5, 10+5+25+25+5+5, posX+5+15+30+30+30-5-5, 10+5+25+25+5+5);
@@ -344,26 +315,16 @@ class UI{
        
     void planoConvexa(boolean select){
       if(select){
-         //fill(255);
          styleCaixaOn();
-         //rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
-         
         rect(posX+margin+larguraOpcao/2+larguraOpcao*2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
          
          styleDesenhoOn();
-         //noFill();
-         //stroke(0);
 
          arc(posX+5+15+30+30+5+5+2, 10+5+25+25+5+5+10, 15, 20, -PI/2, PI/2);
          arc(posX+5+15+30+30+5+5+2, 10+5+25+25+5+5+10, 0, 20, PI/2, 3*PI/2);
-         
-         //stroke(255);
+
       }else{
-        //noFill();
-        //stroke(255); 
         styleCaixaOff();
-        
-       // rect(600+5+15+30+30, 10+5+25+25+5, 30, 30);
         rect(posX+margin+larguraOpcao/2+larguraOpcao*2, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
 
         styleDesenhoOff();
@@ -374,30 +335,21 @@ class UI{
        
     void convexoConcava(boolean select){
       if(select){
-        //fill(255);
         styleCaixaOn();
-       // rect(600+5+15+30+30+30+30, 10+5+25+25+5, 30, 30);
         rect(posX+margin+larguraOpcao/2+larguraOpcao*4, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
         
         
         styleDesenhoOn();
-        //noFill();
-        //stroke(0);
-        
         line(posX+5+15+30+30+30+30+5+5+10, 10+5+25+25+5+5, posX+5+15+30+30+30+30+30-5-5-5, 10+5+25+25+5+5);
         arc(posX+5+15+30+30+30+30+5+5+5, 10+5+25+25+5+5+10, 10, 20, PI/2, 3*PI/2);
         arc(posX+5+15+30+30+30+30+5+20-5-5+5, 10+5+25+25+5+5+10, 10, 20, PI/2, 3*PI/2);
         line(posX+5+15+30+30+30+30+5+5+10, 10+5+25+25+5+5+20, posX+5+15+30+30+30+30+30-5-5-5, 10+5+25+25+5+5+20);      
         
       }else{
-        //noFill();
-        //stroke(255);
         styleCaixaOff();
-       // rect(600+5+15+30+30+30+30, 10+5+25+25+5, 30, 30);
         rect(posX+margin+larguraOpcao/2+larguraOpcao*4, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
     
         styleDesenhoOff();
-        
         line(posX+5+15+30+30+30+30+5+5+10, 10+5+25+25+5+5, posX+5+15+30+30+30+30+30-5-5-5, 10+5+25+25+5+5);
         arc(posX+5+15+30+30+30+30+5+5+5, 10+5+25+25+5+5+10, 10, 20, PI/2, 3*PI/2);
         arc(posX+5+15+30+30+30+30+5+20-5-5+5, 10+5+25+25+5+5+10, 10, 20, PI/2, 3*PI/2);
@@ -408,23 +360,15 @@ class UI{
        
     void concavaConvexa(boolean select){
       if(select){
-       // fill(255);
         styleCaixaOn();
-    //    rect(600+5+15+30+30+30+30, 10+5+25+25+5, 30, 30);
         rect(posX+margin+larguraOpcao/2+larguraOpcao*4, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
     
-        styleDesenhoOn();
-        //noFill();
-        //stroke(0);
-        
+        styleDesenhoOn(); 
         arc(posX+5+15+30+30+30+30+10, 10+5+25+25+5+5+10, 10, 20, -PI/2, PI/2);
         arc(posX+5+15+30+30+30+30+10, 10+5+25+25+5+5+10,20, 20, -PI/2, PI/2);             
         
       }else{
-        //noFill();
-        //stroke(255);
         styleCaixaOff();
-     //   rect(600+5+15+30+30+30+30, 10+5+25+25+5, 30, 30);
         rect(posX+margin+larguraOpcao/2+larguraOpcao*4, posY+margin+alturaBotao*2+margin, larguraOpcao, larguraOpcao);
     
         styleDesenhoOff();
@@ -433,6 +377,4 @@ class UI{
                     
       }         
     }
-  
-  /*Fim métodos completementares*/
 }

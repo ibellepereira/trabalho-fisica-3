@@ -2,13 +2,13 @@ class Luz{
   Objeto o;
   Lente l;
   Objeto i;
-  //int altura;
   
   Luz(Objeto ob, Lente le){
     o = ob;
     l = le;
-  //  i = new Objeto(loadImage("darwin3.png"));
-    i = new Objeto(null);
+    
+    if(ob.img != null) i = new Objeto(loadImage("darwin3.png"));
+    else i = new Objeto(null);
   }
   
   void mostra(){
@@ -29,11 +29,9 @@ class Luz{
     iniXA = encontraPontoEspelhoX(height/2 - o.altura);
     iniYA = height/2 - o.altura;
     if(l.convergente) focoX = width/2 - l.foco();
-    else focoX = width/2 + l.foco()*2;
+    else focoX = width/2 + l.foco();
     focoY = height/2;
-    
-  //  line(iniXA, iniYA, focoX, focoY);
-    
+ 
     mA = (iniYA - focoY)/(iniXA - focoX);
     
     //------------------
@@ -46,8 +44,6 @@ class Luz{
     iniYB = height/2 + o.altura ;
     centroX = l.posX;
     centroY = l.posY;
-    
-    //line(o.centroX(), o.posY-o.altura, centroX, centroY);
 
     mB = (iniYB - centroY) / (iniXB - centroX);
     
@@ -57,13 +53,6 @@ class Luz{
     x = (iniYB - iniYA - mB*iniXB + mA*iniXA)/(mA - mB);
 
     y = mB*(x - iniXB) + iniYB;
-    
-    /*
-    img.tamY = (int)y - height/2;
-    img.posY = (int)y - img.tamY;
-    img.posX = (int)x - img.tamX/2;
-    img.mostra();
-    */
     
     if((obj.posX != width/2 - l.foco() && l.convergente) || !l.convergente){
       mostraImagem((int) x, (int) y);
@@ -77,7 +66,6 @@ class Luz{
       line(o.centroX(), o.posY-o.altura, centroX, centroY);
 
       line(centroX, centroY, x, y);
-    
   
     } else i.altura = 0;
   }
@@ -117,7 +105,6 @@ class Luz{
     y = 1*mFoco*(x - iniXFoco) + iniYFoco; 
     
     if(obj.posX != width/2 - l.focoRelativo()){
-      //desenha imagem
       mostraImagem((int)x, (int)y); 
       
       styleRaioA();
@@ -128,9 +115,7 @@ class Luz{
       line(o.centroX(), o.posY-o.altura, l.posX, o.posY-o.altura);
       line(iniXFoco, iniYFoco, x, y);
       line(iniXFoco, iniYFoco, focoX, focoY);
-
       
-     
     } else i.altura = 0;
   }
  
@@ -156,28 +141,13 @@ class Luz{
   }
 
   void mostraImagem(int x, int y){
-
-  
       i.altura =height/2 - y;
-      //if(i.altura == 0) i.altura = 1;
       
       i.posX = x;
       i.posY = height/2;
       
-      System.out.println(x);
- /*     
-      if(y > height/2){
-        i.posX = width - x;
-        translate(width/2*2,height/2*2);
-        rotate(PI);         
-      }*/
       if(i.altura != 0)
         i.mostra();
-       /* 
-      if(y > height/2){
-        translate(width/2*2,height/2*2);
-        rotate(PI);         
-      }           */
   }
   
 }
