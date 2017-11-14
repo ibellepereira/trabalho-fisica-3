@@ -14,7 +14,7 @@ class Lente{
    posX = width/2;
    posY = height/2;
    raio = 200;
-   altura = 400;
+   altura = 300;
    
    espelhado = true;
    convergente = true;
@@ -30,11 +30,13 @@ class Lente{
    if(espelhado){
      if(convergente){
        
-       arc(centroX(), posY, raio*2, raio*2, -PI/2, PI/2);
+    //   arc(centroX(), posY, raio*2, raio*2, -PI/2, PI/2);
+         arc(centroX(), posY, raio*20, raio*20, -radians(5), radians(5));
        
      }else{
        
-       arc(centroX(), posY, raio*2, raio*2, PI/2, 3*PI/2);
+     //  arc(centroX(), posY, raio*2, raio*2, PI/2, 3*PI/2);
+         arc(centroX(), posY, raio*20, raio*20, radians(175), radians(185));
        
      }
    }else{
@@ -92,20 +94,26 @@ class Lente{
    styleFoco();
    
    if(espelhado){
-     if(convergente){
-       line(centroX()+raio+foco(), posY-5, centroX()+raio+foco(), posY+5);
-       line(centroX()+raio-foco(), posY-5, centroX()+raio-foco(), posY+5);   
-       
+    // if(convergente){
+      // line(centroX()+raio+foco(), posY-5, centroX()+raio+foco(), posY+5);
+      // line(centroX()+raio-foco(), posY-5, centroX()+raio-foco(), posY+5);   
+       line(width/2+foco(), posY-5, width/2+foco(), posY+5);
+       line(width/2-foco(), posY-5, width/2-foco(), posY+5);
+
+    /*   
        line(centroX()+raio+antiPrincipal(), posY-5, centroX()+raio+antiPrincipal(), posY+5);
        line(centroX()+raio-antiPrincipal(), posY-5, centroX()+raio-antiPrincipal(), posY+5);       
-    
+    */
+       line(width/2+antiPrincipal(), posY-5, width/2+antiPrincipal(), posY+5);
+       line(width/2-antiPrincipal(), posY-5, width/2-antiPrincipal(), posY+5);       
+    /*
      }else{
        line(centroX()-raio+foco(), posY-5, centroX()-raio+foco(), posY+5);
        line(centroX()-raio-foco(), posY-5, centroX()-raio-foco(), posY+5);   
        
        line(centroX()-raio+antiPrincipal(), posY-5, centroX()-raio+antiPrincipal(), posY+5);
        line(centroX()-raio-antiPrincipal(), posY-5, centroX()-raio-antiPrincipal(), posY+5);     
-     }
+     }*/
    }else{
      
        line(posX-focoRelativo(), posY-5, posX-focoRelativo(), posY+5);
@@ -117,12 +125,21 @@ class Lente{
    }
  }
  
+ /*Virou relativo também*/
  int foco(){
    return raio/2;
  }
  
+ int focoRelativoEspelho(){
+   return raio/2; 
+ }
+ 
+ int antiPrincipalRelativoEspelho(){
+   return focoRelativoEspelho()*2; 
+ }
+ 
  int focoRelativo(){
-   return foco()*2;
+   return foco();
  }
  
  int antiPrincipal(){
@@ -135,8 +152,8 @@ class Lente{
  
  int centroX(){
    if(espelhado){
-     if(convergente) return posX - raio; 
-     else return posX + raio;
+     if(convergente) return posX - raio*10; 
+     else return /*posX + raio*/ posX+raio*10;
    }else{
      if(convergente && (tipo == 2 || tipo == 3))
        return posX - larguraLenteFina()/2;
@@ -162,5 +179,6 @@ class Lente{
    noFill();
    stroke(255);
  }
+
   
 }
