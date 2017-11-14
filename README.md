@@ -7,7 +7,7 @@ Simulador de imagens em lentes e espelhos esféricos.
 - [x] Movimentar objeto.
 - [x] Modificar altura do objeto.
 - [x] Calcular tamanho da imagem.
-- [x] Modificar raio de curvatura.
+- [ ] Modificar raio de curvatura. //esqueci t.t
 - [x] Identificar natureza da imagem.
 
 ## 3. Classes
